@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <app-item-problem *ngFor="let problem of problems"
+            [problem]="problem"
+            (response)="getResponse($event)"
+          ></app-item-problem>
+      <div class="form-group">
+        <button
+          type="button"
+          class="btn btn-block btn-success"
+          [disabled]="disabled"
+          (click)="sendAnswer()"
+        >
+          Finalizar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

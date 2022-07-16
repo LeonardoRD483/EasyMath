@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="alert alert-success" role="alert">
+    {{score}} pts!
+  </div>
+  <div class="d-flex flex-row row">
+    <div class="card-area col-md-4 mb-4" *ngFor="let area of areas">
+      <div class="card" >
+        <div class="card-body">
+          <a
+
+            [ngClass]="{
+              block: area.isBlock
+            }"
+            [routerLink]="['/student/area/', area.name_area]"
+            class="text-center"
+            ><div>
+              <img
+                [ngClass]="{
+                  block: area.isBlock
+                }"
+                [src]="area.url_img"
+                [alt]="area.name_area"
+              /></div
+          ></a>
+        </div>
+        <div class="card-footer text-center">
+          <strong>{{ area.name_area.toUpperCase() }}</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

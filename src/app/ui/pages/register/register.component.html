@@ -1,0 +1,56 @@
+<section class="login jumbotron vertical-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-1 col-lg-12">
+        <div class="card">
+          <div class="card-header">
+            Register
+          </div>
+          <div class="card-body">
+            <form [formGroup]="registerForm!">
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <label for="first_name">First Name</label>
+                  <input formControlName="first_name" type="text" class="form-control" id="first_name" aria-describedby="emailHelp" placeholder="Enter First Name">
+                </div>
+                <div class="col-md-6 form-group">
+                  <label for="last_name">Last Name</label>
+                  <input formControlName="last_name" type="text" class="form-control" id="last_name" aria-describedby="emailHelp" placeholder="Enter Last Name">
+                </div>
+              </div>
+              <div class="form-group">
+                <select formControlName="school" name="schools" id="school" class="form-control">
+                  <option selected>Select School</option>
+                  <option *ngFor = "let school of schools" [value]="school.cod">{{school.name}}</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="username">Username</label>
+                <input formControlName="username" type="text" class="form-control" id="username" aria-describedby="emailHelp" placeholder="Enter Username">
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input formControlName="email" type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input formControlName="password" type="password" class="form-control" id="password" placeholder="Password">
+              </div>
+              <div class="form-group">
+                <label for="repeat_password">Password</label>
+                <input formControlName="repeat_password" type="password" class="form-control" id="repeat_password" placeholder="Repeat Password">
+              </div>
+              <div class="form-group">
+                <a [routerLink]="['/auth/login']"><p class="text-primary">login</p></a>
+              </div>
+              <button type="submit" [disabled]="registerForm?.invalid" class="register-btn btn btn-primary" (click)="register()">Register</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+

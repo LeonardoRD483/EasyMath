@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="d-flex flex-row row">
+    <div class="col-md-12 mb-4" *ngFor="let level of levels" >
+      <mat-card [ngClass]="{
+        block: level.isBlock,
+        enable: !level.isBlock
+      }">
+        <mat-card-title>{{level.fields?.name}}</mat-card-title>
+        <mat-card-actions align="end">
+          <button mat-button  [routerLink]="['/student/area/',name_area, level.pk]">Play</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>
+
+

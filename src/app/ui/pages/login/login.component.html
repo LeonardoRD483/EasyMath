@@ -1,0 +1,32 @@
+<section class="login jumbotron vertical-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-1 col-lg-12">
+        <div class="card">
+          <div class="card-header">
+            Login
+          </div>
+          <div class="card-body">
+            <form [formGroup]="loginForm!">
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input formControlName="email" type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input formControlName="password" type="password" class="form-control" id="password" placeholder="Password">
+              </div>
+              <div class="form-group" *ngIf="!isSuccess">
+                <p class="text-danger">Email y/o password incorrect</p>
+              </div>
+              <div class="form-group">
+                <a [routerLink]="['/auth/register']"><p class="text-primary">Create an account</p></a>
+              </div>
+              <button type="submit" [disabled]="loginForm?.invalid" class="login-btn btn btn-primary" (click)="login()">Login</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

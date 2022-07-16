@@ -1,0 +1,20 @@
+<p>
+  <mat-toolbar color="primary">
+    <button mat-button [routerLink]="['/student/home']" [routerLinkActive]="'is-active'">Home</button>
+    <button mat-button [routerLink]="['/student/profile']" [routerLinkActive]="'is-active'">My profile</button>
+    <button mat-button [routerLink]="['/student/area']" [routerLinkActive]="'is-active'">Areas</button>
+
+    <!-- <button mat-button [routerLink]="['/student/ranking']" [routerLinkActive]="'is-active'">Ranking</button> -->
+    <!-- <button mat-button [matMenuTriggerFor]="menu">Room</button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Create</button>
+      <button mat-menu-item>Join</button>
+    </mat-menu> -->
+    <span class="example-spacer"></span>
+    <button mat-button (click)="clearAllCookie()">Salir</button>
+    <mat-card class="example-card">
+      <div mat-card-avatar class="example-header-image"></div>
+    </mat-card>
+  </mat-toolbar>
+</p>
+<router-outlet></router-outlet>
